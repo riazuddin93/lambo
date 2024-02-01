@@ -35,8 +35,23 @@
 
     </div>
     <div class="hero2" id="hero2">
+        <button id="btn-1">click</button>
         
     </div>
+    <script>
+        const btnone = document.getElementById('btn-1');
+        const background = document.getElementById('hero2');
+
+        function change(){
+            const background = document.getElementById('hero2')
+
+            background.style.background = "url('hero2.jpg')no-repeat center/cover ";
+        }
+
+
+
+        btnone.addEventListener('click', change);
+    </script>
     
 </body>
 </html>

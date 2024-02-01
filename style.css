@@ -67,6 +67,7 @@ nav .right ul li{
     height: 650px;
     background: url('hero4.jpg') no-repeat center/cover;
     display: block;
+    transition: ease-in 0.5ms;
 }
 #myVideo {
     width: 100%; /* Set the width in pixels */

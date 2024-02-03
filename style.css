@@ -7,6 +7,7 @@
     
 }
 nav{
+    position: absolute;
     background: black;
     width: 100%;
     height: 90px;
@@ -58,16 +59,30 @@ nav .right ul li{
     padding-right: 20px;
     color: white;
 }
-/* hero */
-.hero{
-
+.container{
+    padding: 0 50px;
 }
 #hero2{
+    padding: 0 50px;
     width: 100%;
-    height: 650px;
-    background: url('hero4.jpg') no-repeat center/cover;
     display: block;
     transition: ease-in 0.5ms;
+}
+.tabs_content{
+    position: relative;
+}
+.tabs_content .tabs img{
+    max-width: 100%;
+}
+.tabs{
+    opacity: 0;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    transition: opacity .2s ease-in;
+}
+.tabs.active{
+    opacity: 1;
 }
 #myVideo {
     width: 100%; /* Set the width in pixels */

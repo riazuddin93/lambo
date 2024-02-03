@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
+
 <body>
     <nav>
         <div class="left">
             <div class="image">
-               <img src="logo.png" alt="">
+                <img src="logo.png" alt="">
             </div>
             <ul>
                 <li>models</li>
@@ -32,46 +34,59 @@
         <video autoplay loop muted plays-inline id="myVideo">
             <source src="video.mp4" type="video/mp4">
         </video>
+    </div>
+    <section class="container">
+        <div class="hero2" id="hero2">
+            <button id="btn-1" data-tab="tabs_1_content" class="tab_btn active">revueto</button>
+            <button id="btn-2" data-tab="tabs_2_content" class="tab_btn">urus</button>
+            <button id="btn-3" data-tab="tabs_3_content" class="tab_btn">hurucan</button>
+        </div>
+        <div class="tabs_content">
+            <div id="tabs_1_content" class="tabs active">
+                <img src="./hero2.jpg" alt="">
+            </div>
+            <div id="tabs_2_content" class="tabs">
+                <img src="./hero3.jpg" alt="">
+            </div>
+            <div id="tabs_3_content" class="tabs">
+                <img src="./hero4.jpg" alt="">
+            </div>
+        </div>
+    </section>
 
-    </div>
-    <div class="hero2" id="hero2">
-        <button id="btn-1">click</button>
-        <button id="btn-2">click</button>
-        <button id="btn-3">click</button>
-        
-    </div>
+
     <script>
-        const btnone = document.getElementById('btn-1');
-        const btntwo = document.getElementById('btn-2');
-        const btnthree = document.getElementById('btn-3');
-        const background = document.getElementById('hero2');
+        function Tabs() {
+  var bindAll = function() {
+    var menuElements = document.querySelectorAll('[data-tab]');
+    for(var i = 0; i < menuElements.length ; i++) {
+      menuElements[i].addEventListener('click', change, false);
+    }
+  }
 
-        function change(){
-            const background = document.getElementById('hero2')
+  var clear = function() {
+    var menuElements = document.querySelectorAll('[data-tab]');
+    for(var i = 0; i < menuElements.length ; i++) {
+      menuElements[i].classList.remove('active');
+      var id = menuElements[i].getAttribute('data-tab');
+      document.getElementById(id).classList.remove('active');
+    }
+  }
 
-            background.style.background = "url('hero2.jpg')no-repeat center/cover ";
-        }
+  var change = function(e) {
+    clear();
+    e.target.classList.add('active');
+    var id = e.currentTarget.getAttribute('data-tab');
+    document.getElementById(id).classList.add('active');
+  }
 
+  bindAll();
+}
 
-        
-        function change2(){
-            const background = document.getElementById('hero2')
+var connectTabs = new Tabs();
 
-            background.style.background = "url('hero3.jpg')no-repeat center/cover ";
-        }
-
-        function change3(){
-            const background = document.getElementById('hero2')
-
-            background.style.background = "url('hero4.jpg')no-repeat center/cover ";
-        }
-
-
-
-        btnone.addEventListener('click', change);
-        btntwo.addEventListener('click', change2);
-        btnthree.addEventListener('click', change3);
     </script>
-    
+
 </body>
+
 </html>
